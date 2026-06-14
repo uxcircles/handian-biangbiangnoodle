@@ -379,9 +379,10 @@
   .cta-card-weight { font-size: 12px; font-family: sans-serif; color: rgba(255,255,255,0.3); margin-bottom: 28px; letter-spacing: 0.1em; }
 
   .cta-btn {
-    display: block; width: 100%; padding: 14px 0;
+    display: block; width: 100%; padding: 14px 0; box-sizing: border-box;
     border: none; border-radius: 100px; font-family: sans-serif;
     font-size: 13px; letter-spacing: 0.25em; cursor: pointer;
+    text-decoration: none; text-align: center;
     transition: transform 0.2s, filter 0.2s;
     position: relative; overflow: hidden;
   }
@@ -423,6 +424,32 @@
 
   /* ── REVEAL ── */
   .reveal { opacity: 0; transform: translateY(40px); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-logo-en { font-size: 16px; }
+    .nav-links { display: none; }
+
+    /* product sections stack vertically */
+    .product-section { padding: 80px 24px; min-height: auto; }
+    .product-inner,
+    .product-section.gold-world .product-inner { flex-direction: column; gap: 32px; }
+    .product-info { width: 100%; text-align: center; }
+    #redWrap, #goldWrap { width: min(82vw, 360px); }
+    .product-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+    .spicy-meter { justify-content: center; }
+
+    /* CTA cards stack */
+    .cta-cards { flex-direction: column; align-items: center; }
+    .cta-card { width: 100%; max-width: 360px; }
+    .cta-trust { gap: 24px; }
+
+    /* split comparison: roomier text */
+    .split-product-img { width: clamp(120px, 34vw, 180px); }
+    .split-title-cn { font-size: clamp(18px, 5vw, 26px); }
+    .split-title-en { font-size: 10px; }
+  }
 </style>
 </head>
 <body>
@@ -592,14 +619,14 @@
       <div class="cta-card-name">香辣雞寬帶麵</div>
       <div class="cta-card-en">BiangBiang Noodle with<br>Spicy Minced Chicken Sauce</div>
       <div class="cta-card-weight">350g · 1人份 · 冷凍 -18°C</div>
-      <button class="cta-btn">立即購買</button>
+      <a class="cta-btn" href="https://retour.uk/products/%E6%96%B0%E5%93%81-%E6%BC%A2%E5%85%B8-%E9%A6%99%E8%BE%A3%E9%9B%9E%E5%AF%AC%E5%B8%B6%E9%BA%B5-350g-han-dian-biang-biang-noodle-with-spicy-minced-chicken-sauce" target="_blank" rel="noopener noreferrer">立即購買</a>
     </div>
     <div class="cta-card gold-card reveal">
       <img class="cta-card-img" src="beef-cutout.png" alt="酸菜麻辣牛肉寬帶麵">
       <div class="cta-card-name">酸菜麻辣牛肉寬帶麵</div>
       <div class="cta-card-en">Spicy Beef BiangBiang Noodle Soup<br>with Pickled Mustard</div>
       <div class="cta-card-weight">598g · 1–2人份 · 冷凍 -18°C</div>
-      <button class="cta-btn">立即購買</button>
+      <a class="cta-btn" href="https://oolios.com/products/spicy-beef-biang-biang-noodle-soup-with-pickled-mustard" target="_blank" rel="noopener noreferrer">立即購買</a>
     </div>
   </div>
 
